@@ -1,9 +1,11 @@
-package com.example.demo.mytest;
+package com.example.demo.lock;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-// 自旋锁实现
-public class LockTest {
+/**
+ * 自旋锁实现
+  */
+public class SpinLockDemo {
 
     AtomicReference<Thread> reference = new AtomicReference<Thread>();
 
@@ -14,7 +16,6 @@ public class LockTest {
         while (!reference.compareAndSet(null, thread)) {
 
         }
-
     }
 
     // 解锁
